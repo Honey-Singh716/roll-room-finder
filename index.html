@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light">
+    <div class="container">
+        <h1>IIT Student Portal</h1>
+        
+        <!-- Mode Selection -->
+        <div class="mode-selection">
+            <h2>Select Search Mode:</h2>
+            <div class="mode-options">
+                <button id="selectRoomFinder" class="mode-btn">Room Finder</button>
+                <button id="selectRollFinder" class="mode-btn">Roll Number Finder</button>
+            </div>
+        </div>
+        
+        <!-- Room Finder Section (hidden initially) -->
+        <div id="roomFinderSection" class="search-section" style="display:none">
+            <h2>Room Finder</h2>
+            <div class="search-box">
+                <input type="text" id="roomSearchInput" placeholder="Enter student name..." autocomplete="off">
+                <button id="roomSearchBtn">Search</button>
+            </div>
+            <div id="roomResult" class="result-area"></div>
+            <button class="back-btn" onclick="resetSearch()">Back to Mode Selection</button>
+        </div>
+        
+        <!-- Roll Finder Section (hidden initially) -->
+        <div id="rollFinderSection" class="search-section" style="display:none">
+            <h2>Roll Number Finder</h2>
+            <div class="search-box">
+                <input type="text" id="rollSearchInput" placeholder="Enter student name..." autocomplete="off">
+                <button id="rollSearchBtn">Search</button>
+                <select id="branchFilter">
+                    <option value="">Filter by Branch</option>
+                </select>
+            </div>
+            <div id="count" class="count-display"></div>
+            <div id="rollResult" class="result-area"></div>
+            <button class="back-btn" onclick="resetSearch()">Back to Mode Selection</button>
+        </div>
+        
+        <!-- Theme Switcher -->
+        <div class="theme-switcher">
+            <label for="themeToggle">Theme:</label>
+            <select id="themeToggle">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
